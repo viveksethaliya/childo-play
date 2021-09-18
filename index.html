@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>childo play</title>
+<link rel="icon" href="doc/abc.png" type="image/x-icon" />
+<style>
+    body
+    {
+        font-family: sans-serif;
+        background: url("letter_bg.png");
+        }
+    .main-frame
+    {
+        background: white;
+
+        top: 20px;
+        right: 10%;
+        left: 10%;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px 0 black;
+        padding: 20px;
+        background-color: #abe9cd;
+        background-image: linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+
+        }
+        .nevbar-right
+        {
+        	right: 0px;
+            left: 0px;
+            width: auto;
+            position: absolute;
+            height: 80px;
+            display: inline-block;
+            padding: 3px;
+            border-radius: 8px;
+            }
+        .button-bar
+        {
+            border-radius: 5px;
+            border: 0px;
+            height: 40px;
+            width: 90px;
+            background: #abe9cd;
+     
+            transition: all 0.2s;
+            }
+        .button-bar:hover{
+        	box-shadow: 1px 1px 4px black;
+        }
+            .element-cn
+            {
+                height: 200px;
+                width: 200px;
+                border: 3px solid black;
+                display: block;
+                border-radius: 8px;
+                transition: all 0.2s;
+                margin: 10px;
+                padding: 3px;
+                box-shadow: 2px 2px 10px 1px black;
+                }
+             .element-cn:hover
+             {
+                 transform: scale(1.05);
+                 }
+             .nevbar-right-child
+             {
+                 position: absolute;
+                 right: 10px;
+
+                 }	
+             .nevbar-left-child
+             {
+                 transform: scale(0.9);
+                 position: absolute;
+                 top: -25%;
+                 }
+             hr
+             {
+                 border: 1px solid black;
+                 
+                 }
+        table{
+        	margin-bottom: 40px;
+        }
+</style>
+</head>
+<body>
+
+<div class="main-frame">
+
+	<div class="nevbar-right">
+    <div class="nevbar-right-child">
+		<button class="button-bar" onclick="javascript:{window.open('mailto: vsethaliya@gmail.com')}">Contact us</button>
+		<button class="button-bar" onclick="javascript:{window.open('team.html')}">Info</button>
+        </div>
+    <div class="nevbar-left-child">
+    <img src="logo.png" />
+    </div>
+	</div>
+	<br><br><br><img src="doc/kids.png" style="width: 100%; height: auto;"><br><br>
+
+    <table align="center">
+    
+    <tr>
+
+    <td>
+	<div class="element-cn" onclick="draw()">
+    <center>Drawing pad</center>
+    <hr>
+    <p>A simple drawing board for fun.</p>
+    <center><img src="doc/drawing.png" height="70" width="70"></center>
+    <a href="drawing.html">click here to open</a>
+    </div>
+    </td>
+
+    <td>
+	<div class="element-cn" onclick="spell()">
+    <center>Spelling game</center>
+    <hr>
+    <p>Basic spelling game for kids.     	</p>
+    <center><img src="doc/spell.png" eight="70" width="70"></center>
+    <a href="spelling.html">click here to open</a>
+    </div>
+    </td>
+
+    </tr>
+
+    <tr>
+    <td>
+    <div class="element-cn" onclick="spell()">
+    <center>Stories</center>
+    <hr>
+    <p>Short moral stories for children.</p>
+    <center><img src="doc/story.png" eight="70" width="70"></center>
+    <a href="story.html">click here to open</a>
+    </div>
+    </td>
+    <td>
+    <div class="element-cn" onclick="spell()">
+    <center>maths puzzel</center>
+    <hr>
+    <p>A simple maths puzzle +, - , X , ÷.</p>
+    <center><img src="doc/maths.png" eight="70" width="70"></center>
+    <a href="maths.html">click here to open</a>
+    </div>
+    </td>
+    </tr>
+
+    </table>
+	
+</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>childo play</title>
+	<link rel="icon" href="doc/abc.png" type="image/x-icon" />
+	<style type="text/css">
+		body{
+			font-family: Copperplate, Fantasy;
+			background: #007acc;
+		}
+		.main-content{
+			border: 0px solid;
+			border-radius: 5px;
+			background: #4db8ff;
+			box-shadow: 0px 2px 4px black;
+			padding: 10px;
+			display: inline-block;
+			width: 890px;
+			height: 420px;
+		}
+		.upper-nev{
+			position: absolute;
+			left: 0px;
+			margin-left: 10px;
+			color: black;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		.button{
+			border: 0px;
+			border-radius: 5px;
+			width: 70px;
+			height: 40px;
+
+			background: #68B25B;
+			color: #fff;	
+			cursor: pointer;
+			outline: none;
+			text-shadow: 0 1px #6A845F;
+			transition: all 0.1s;
+		}
+		.button:hover{
+			box-shadow: 1px 1px 4px 0 black;
+		}
+		.text-box{
+			height: 30px;
+			width: 150px;
+			border: 0px;
+			border-radius: 5px;
+			box-shadow: 0px 1px 4px white;
+		}
+	</style>
+</head>
+<body>
+<center>
+<div class="upper-nev" onclick="back()">&#129136</div><br>
+<div class="main-content">
+<p id="print" style="padding-bottom: 70px; font-size: 40px; color: white;"></p>
+<button onclick="fruit()" class="button" id="fruitss">Fruits</button>
+<button onclick="animal()" class="button" id="animal">Animals</button>
+<button onclick="thing()" class="button" id="thing">Things</button><br><br>
+<input type="text" id="enterspell" class="text-box" placeholder="Type spelling here"><br><br>
+<button onclick="check();" class="button">Check</button>
+</div>
+<img src="doc/spelling2.png">
+</center>
+<script type="text/javascript">
+	const animals = ["cat", "dog", "cow", "horse" ,"goat" ,"elephant","wolf","deer","donkey","monkey","rabbit","tiger","lion","camel","sheep","zebra","panda","giraffe","cheetah","gorilla","leopard","hippopotamus","snake","frog","fish","crocodile"];
+	const fruits = ["orange", "apple", "banana" , "mango","strawberry","cherry","chikoo","watermelon","pineapple","grapes","kiwi","papaya","pomegranate","jujube","date","lichi","pear","blackberry","avocado"];
+	const things = ["mobile", "table", "chair"];
+	function fruit(){
+		var lengthofarray = fruits.length;
+		var x = Math.floor(Math.random() * lengthofarray);
+		var rendomword = fruits[x];
+		var wordlength = rendomword.length; 
+		var srtrandom = Math.floor(Math.random() * wordlength);
+		var charAT = rendomword.charAt(srtrandom);
+		var newStr = rendomword.replace(charAT, "_");
+		document.getElementById("print").innerHTML= newStr;
+		fruits.rendomword = rendomword;
+		check.rendomword = fruits.rendomword;
+		document.getElementById("enterspell").style.background = "";
+		document.getElementById("fruitss").style.background = "#68B25B";
+		document.getElementById("animal").style.background = "#bfdeba";
+		document.getElementById("thing").style.background = "#bfdeba";
+		document.getElementById("thing").disabled = true;
+		document.getElementById("animal").disabled = true;
+	}
+	function animal(){
+		var lengthofarray = animals.length;
+		var x = Math.floor(Math.random() * lengthofarray);
+		var rendomword = animals[x];
+		var wordlength = rendomword.length; 
+		var srtrandom = Math.floor(Math.random() * wordlength);
+		var charAT = rendomword.charAt(srtrandom);
+		var newStr = rendomword.replace(charAT, "_");
+		document.getElementById("print").innerHTML= newStr;
+		animal.rendomword = rendomword;
+		check.rendomword = animal.rendomword;
+		document.getElementById("enterspell").style.background = "";
+		document.getElementById("animal").style.background = "#68B25B";
+		document.getElementById("fruitss").style.background = "#bfdeba";
+		document.getElementById("thing").style.background = "#bfdeba";
+		document.getElementById("fruitss").disabled = true;
+		document.getElementById("thing").disabled = true;
+	}
+	function thing(){
+		var lengthofarray = things.length;
+		var x = Math.floor(Math.random() * lengthofarray);
+		var rendomword = things[x];
+		var wordlength = rendomword.length; 
+		var srtrandom = Math.floor(Math.random() * wordlength);
+		var charAT = rendomword.charAt(srtrandom);
+		var newStr = rendomword.replace(charAT, "_");
+		document.getElementById("print").innerHTML= newStr;
+		thing.rendomword = rendomword;
+		check.rendomword = thing.rendomword;
+		document.getElementById("enterspell").style.background = "";
+		document.getElementById("animal").style.background = "#bfdeba";
+		document.getElementById("thing").style.background = "#68B25B";
+		document.getElementById("fruitss").style.background = "#bfdeba";
+		document.getElementById("fruitss").disabled = true;
+		document.getElementById("animal").disabled = true;
+	}
+	function check(){
+		var usransr = document.getElementById("enterspell").value;
+		usransr=usransr.toLowerCase();
+		check.rendomword=check.rendomword.toLowerCase();
+		document.getElementById("enterspell").value = '';
+		document.getElementById("fruitss").style.background = "#68B25B";
+		document.getElementById("thing").style.background = "#68B25B";
+		document.getElementById("animal").style.background = "#68B25B";
+		document.getElementById("fruitss").disabled = false;
+		document.getElementById("thing").disabled = false;
+		document.getElementById("animal").disabled = false;
+		if(usransr===check.rendomword){
+			var audio = new Audio('Positive-beep.wav');
+			audio.play();
+			document.getElementById("print").innerHTML= "you guessed it right the word was <font color=\"lightgreen\">" + check.rendomword + "</font>.";
+		}
+		else{
+			var audio = new Audio('Wrong-beep.wav');
+			audio.play();
+			document.getElementById("print").innerHTML= "Wrong answer. The word was <font color=\"lightgreen\">" + check.rendomword + "</font>.";
+			document.getElementById("enterspell").style.background = "red";
+		}
+	}
+	function back(){
+		window.history.back();
+	}
+</script>
+</body>
+</html>
+
